@@ -1,0 +1,37 @@
+[{
+    "id": "tara",
+    "name": "Tara",
+    "tags": ["female", "prince", "brujah"]
+}, {
+    "id": "morgan",
+    "name": "Morgan",
+    "tags": ["female", "primogen", "malkavian"]
+}, {
+    "id": "louis",
+    "name": "Louis",
+    "tags": ["male", "primogen", "nosferatu"]
+}, {
+    "id": "isaiah",
+    "name": "Isaiah",
+    "tags": ["male", "primogen", "toreador"]
+}, {
+    "id": "perseus",
+    "name": "Perseus",
+    "tags": ["male", "primogen", "tremere"]
+}, {
+    "id": "demetria",
+    "name": "Demetria",
+    "tags": ["female", "primogen", "ventrue"]
+}, {
+    "id": "edward",
+    "name": "Edward",
+    "tags": ["male", "harpy", "malkavian"]
+}, {
+    "id": "viktor",
+    "name": "Viktor",
+    "tags": ["male", "harpy", "toreador"]
+}, {
+    "id": "alice",
+    "name": "Alice",
+    "tags": ["female", "harpy", "brujah"]
+}]

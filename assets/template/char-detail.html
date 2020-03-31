@@ -15,10 +15,29 @@
     {{/tags}}
 </div>
 
+<h2>Info</h2>
+
 <ul>
-    {{#detail.notes}}
+    {{#detail.info}}
     <li><span>{{.}}</span></li>
-    {{/detail.notes}}
+    {{/detail.info}}
 </ul>
 
+<h2>Description</h2>
+
 <p>{{detail.description}}</p>
+
+<h2>History</h2>
+
+<ul>
+    {{#detail.history}}
+    <li>
+        <h3>{{date}}</h3>
+        {{#notes}}
+        <ul>
+            <li><span>{{.}}</span></li>
+        </ul>
+        {{/notes}}
+    </li>
+    {{/detail.history}}
+</ul>

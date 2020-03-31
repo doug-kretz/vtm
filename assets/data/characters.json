@@ -35,6 +35,10 @@
     "name": "Alice",
     "tags": ["female", "harpy", "brujah", "camarilla"]
 }, {
+    "id": "ursulette",
+    "name": "Ursulette",
+    "tags": ["female", "seneschal", "ventrue", "camarilla"]
+}, {
     "id": "amaroq",
     "name": "Amaroq",
     "tags": ["male", "player", "gangrel", "camarilla"]

@@ -1,4 +1,4 @@
-<h1>{{name}}</h1>
+<h1>{{{name}}}</h1>
 
 {{#detail.portrait}}
 <hr />
@@ -27,7 +27,11 @@
 
 <p>{{detail.description}}</p>
 
+{{#detail.history}}
+
 <h2>History</h2>
+
+{{/detail.history}}
 
 <ul>
     {{#detail.history}}

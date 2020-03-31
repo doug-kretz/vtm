@@ -1,45 +1,45 @@
 [{
     "id": "tara",
-    "name": "Tara",
-    "tags": ["female", "prince", "brujah", "camarilla"]
+    "name": "Tara &#9792;",
+    "tags": ["camarilla", "brujah", "prince"]
 }, {
     "id": "morgan",
-    "name": "Morgan",
-    "tags": ["female", "primogen", "malkavian", "camarilla"]
+    "name": "Morgan &#9792;",
+    "tags": ["camarilla", "malkavian", "primogen"]
 }, {
     "id": "louis",
-    "name": "Louis",
-    "tags": ["male", "primogen", "nosferatu", "camarilla"]
+    "name": "Louis &#9794;",
+    "tags": ["camarilla", "nosferatu", "primogen"]
 }, {
     "id": "isaiah",
-    "name": "Isaiah",
-    "tags": ["male", "primogen", "toreador", "camarilla"]
+    "name": "Isaiah &#9794;",
+    "tags": ["camarilla", "toreador", "primogen"]
 }, {
     "id": "perseus",
-    "name": "Perseus",
-    "tags": ["male", "primogen", "tremere", "camarilla"]
+    "name": "Perseus &#9794;",
+    "tags": ["camarilla", "tremere", "primogen"]
 }, {
     "id": "demetria",
-    "name": "Demetria",
-    "tags": ["female", "primogen", "ventrue", "camarilla"]
+    "name": "Demetria &#9792;",
+    "tags": ["camarilla", "ventrue", "primogen"]
 }, {
     "id": "edward",
-    "name": "Edward",
-    "tags": ["male", "harpy", "malkavian", "camarilla"]
+    "name": "Edward &#9794;",
+    "tags": ["camarilla", "malkavian", "harpy"]
 }, {
     "id": "viktor",
-    "name": "Viktor",
-    "tags": ["male", "harpy", "toreador", "camarilla"]
+    "name": "Viktor &#9794;",
+    "tags": ["camarilla", "toreador", "harpy"]
 }, {
     "id": "alice",
-    "name": "Alice",
-    "tags": ["female", "harpy", "brujah", "camarilla"]
+    "name": "Alice &#9792;",
+    "tags": ["camarilla", "brujah", "harpy"]
 }, {
     "id": "ursulette",
-    "name": "Ursulette",
-    "tags": ["female", "seneschal", "ventrue", "camarilla"]
+    "name": "Ursulette &#9792;",
+    "tags": ["camarilla", "ventrue", "seneschal"]
 }, {
     "id": "amaroq",
-    "name": "Amaroq",
-    "tags": ["male", "player", "gangrel", "camarilla"]
+    "name": "Amaroq &#9794;",
+    "tags": ["camarilla", "gangrel", "player"]
 }]

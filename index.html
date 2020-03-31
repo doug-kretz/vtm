@@ -26,33 +26,117 @@
             background-image: linear-gradient(to bottom right, black, #500);
         }
 
-        .character {
+        .char-info {
             position: absolute;
             border: 1px solid black;
             width: 128px;
             height: 64px;
             border-radius: 5px;
-            background-color: #aaa;
+            background-image: linear-gradient(#500, black);
             z-index: 0;
             padding: 5px;
+            box-shadow: 5px 5px 5px black;
         }
 
-        .character:hover {
+        .char-info:hover {
             z-index: 1;
         }
 
-        .character p {
+        .char-info h1 {
             text-align: center;
             font-size: 18pt;
+            margin: 5px 0 0 0;
+            padding: 0;
+            color: #999;
+            text-shadow: 0 0 10px black;
         }
 
-        .character img {
-            float: left;
-            width: 28px;
-            margin-right: 4px;
+        .char-info .tags {
+            position: absolute;
+            left: 0;
+            bottom: 7px;
+            right: 0;
         }
 
-        /* modal */
+
+        /* <tags> */
+
+        .tags {
+            text-align: center;
+        }
+
+        .tag {
+            position: relative;
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 1px solid black;
+            border-radius: 15px;
+            background-color: #999;
+            padding: 3px;
+        }
+
+        .tag img {
+            margin-top: 2px;
+            width: 16px;
+            height: 16px;
+        }
+
+        .tag p {
+            display: none;
+            background-color: #999;
+            padding: 5px;
+            font-size: 10pt;
+            border: 1px solid black;
+            border-radius: 5px;
+            text-transform: capitalize;
+            color: black;
+            position: absolute;
+            z-index: 5;
+        }
+
+        .tag:hover p {
+            display: block;
+        }
+
+        /* </tags> */
+
+        /* <modal> */
+
+        #overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.5)
+        }
+
+        #modal {
+            position: relative;
+            z-index: 1;
+            background-image: linear-gradient(#500, black);
+            margin: 100px auto 100px auto;
+            width: 512px;
+            color: #aaa;
+            padding: 10px;
+            border: 1px solid black;
+            border-radius: 5px;
+            padding: 20px;
+        }
+
+        #modal h1 {
+            text-align: center;
+        }
+
+        #modal .portrait {
+            display: block;
+            margin: 0 auto 0 auto;
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+
+        /* </modal> */
     </style>
 </head>
 
@@ -60,8 +144,11 @@
     <div id="rel-map">
         <canvas width="400" height="400"></canvas>
     </div>
-    <div id="modal">
+    <div id="overlay">
+        <div id="modal">
+        </div>
     </div>
+
     <div>
         <script src="assets/js/mustache.min.js"></script>
         <script src="assets/js/zepto.min.js"></script>

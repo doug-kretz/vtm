@@ -1,6 +1,11 @@
-<p>{{name}}</p>
-<div>
-    {{#tags}}
-    <img src="assets/img/icon-small-{{.}}.png" alt="{{.}}" />
-    {{/tags}}
+<div class="char-info">
+    <h1>{{name}}</h1>
+    <div class="tags">
+        {{#tags}}
+        <div class="tag">
+            <img src="assets/img/icon-small-{{.}}.png" alt="{{.}}" />
+            <p>{{.}}</p>
+        </div>
+        {{/tags}}
+    </div>
 </div>

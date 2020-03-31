@@ -1,37 +1,41 @@
 [{
     "id": "tara",
     "name": "Tara",
-    "tags": ["female", "prince", "brujah"]
+    "tags": ["female", "prince", "brujah", "camarilla"]
 }, {
     "id": "morgan",
     "name": "Morgan",
-    "tags": ["female", "primogen", "malkavian"]
+    "tags": ["female", "primogen", "malkavian", "camarilla"]
 }, {
     "id": "louis",
     "name": "Louis",
-    "tags": ["male", "primogen", "nosferatu"]
+    "tags": ["male", "primogen", "nosferatu", "camarilla"]
 }, {
     "id": "isaiah",
     "name": "Isaiah",
-    "tags": ["male", "primogen", "toreador"]
+    "tags": ["male", "primogen", "toreador", "camarilla"]
 }, {
     "id": "perseus",
     "name": "Perseus",
-    "tags": ["male", "primogen", "tremere"]
+    "tags": ["male", "primogen", "tremere", "camarilla"]
 }, {
     "id": "demetria",
     "name": "Demetria",
-    "tags": ["female", "primogen", "ventrue"]
+    "tags": ["female", "primogen", "ventrue", "camarilla"]
 }, {
     "id": "edward",
     "name": "Edward",
-    "tags": ["male", "harpy", "malkavian"]
+    "tags": ["male", "harpy", "malkavian", "camarilla"]
 }, {
     "id": "viktor",
     "name": "Viktor",
-    "tags": ["male", "harpy", "toreador"]
+    "tags": ["male", "harpy", "toreador", "camarilla"]
 }, {
     "id": "alice",
     "name": "Alice",
-    "tags": ["female", "harpy", "brujah"]
+    "tags": ["female", "harpy", "brujah", "camarilla"]
+}, {
+    "id": "amaroq",
+    "name": "Amaroq",
+    "tags": ["male", "player", "gangrel", "camarilla"]
 }]

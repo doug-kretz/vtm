@@ -9,6 +9,27 @@ let app = {};
         req_success: 0
     };
 
+    app.findChar = (id) => {
+        for (let character of app.state.characters) {
+            if (character.id == id) {
+                return character;
+            }
+        }
+    }
+
+    let onCharClick = (e) => {
+        $("#overlay").show();
+
+        let character = app.findChar(e.data.id);
+        if (character.detail) {
+            $("#modal").html(Mustache.render(
+                app.state.templates["char-detail"],
+                character));
+        } else {
+            app.loadData(e.data.id);
+        }
+    };
+
     let loadRelMap = () => {
 
         // Resize
@@ -22,7 +43,7 @@ let app = {};
         }
 
         // Cleanup
-        mapContainer.find(".character").remove();
+        mapContainer.find(".char-info").remove();
 
         if (app.state.req_attempt !== app.state.req_success) {
             // Content is still loading
@@ -34,21 +55,26 @@ let app = {};
         let cy = Math.round(canvas.height / 2.0);
         let aStep = Math.PI * 2 / app.state.characters.length;
         let r = (cx < cy ? cx : cy) / 1.3;
+        let charInfoTemplate = app.state.templates["char-info"];
 
         for (let i = 0; i < app.state.characters.length; i++) {
+            let character = app.state.characters[i];
             let a = i * aStep;
             let x = cx + r * Math.cos(a)
             let y = cy + r * Math.sin(a)
 
-            mapContainer.append($("<div/>")
-                .html(Mustache.render(app.state.templates["char-info"], app.state.characters[i]))
-                .addClass("character")
+            mapContainer.append(
+                $(Mustache.render(charInfoTemplate, character))
                 .css("left", Math.round(x) - 64)
-                .css("top", Math.round(y) - 32));
+                .css("top", Math.round(y) - 32)
+                .on("click", {
+                        "id": character.id
+                    },
+                    onCharClick));
         }
     };
 
-    let onTemplatesLoaded = (html, status, jqXHR) => {
+    let onTemplateLoaded = (html, status, jqXHR) => {
         let id = jqXHR.responseURL.substring(
             jqXHR.responseURL.lastIndexOf("/") + 1,
             jqXHR.responseURL.lastIndexOf("."));
@@ -58,18 +84,39 @@ let app = {};
         loadRelMap();
     };
 
-    let onCharListLoaded = (data) => {
-        ++app.state.req_success;
-        app.state.characters = data;
-        loadRelMap();
-    };
-
     let loadTemplate = (name) => {
         ++app.state.req_attempt;
         $.ajax({
             url: `assets/template/${name}.html`,
-            success: onTemplatesLoaded,
+            success: onTemplateLoaded,
             dataType: "html"
+        });
+    };
+
+    let onDataLoaded = (json, status, jqXHR) => {
+        let id = jqXHR.responseURL.substring(
+            jqXHR.responseURL.lastIndexOf("/") + 1,
+            jqXHR.responseURL.lastIndexOf("."));
+        ++app.state.req_success;
+
+        if ("characters" === id) {
+            app.state.characters = json;
+            loadRelMap();
+        } else {
+            let character = app.findChar(id);
+            character.detail = json;
+            $("#modal").html(Mustache.render(
+                app.state.templates["char-detail"],
+                character));
+        }
+    };
+
+    app.loadData = (name) => {
+        ++app.state.req_attempt;
+        $.ajax({
+            url: `assets/data/${name}.json`,
+            success: onDataLoaded,
+            dataType: "json"
         });
     };
 
@@ -77,14 +124,9 @@ let app = {};
 
         loadTemplate("char-detail");
         loadTemplate("char-info");
-
-        ++app.state.req_attempt;
-        $.ajax({
-            url: "assets/data/characters.json",
-            success: onCharListLoaded,
-            dataType: "json"
-        });
+        app.loadData("characters");
 
         window.onresize = loadRelMap;
+        $("#overlay").hide().click(() => $("#overlay").hide());
     });
 })(app);

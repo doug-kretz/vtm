@@ -38,4 +38,8 @@
     "id": "amaroq",
     "name": "Amaroq",
     "tags": ["male", "player", "gangrel", "camarilla"]
+},{
+    "id": "donovan",
+    "name": "donovan",
+    "tags": ["male", "player", "Nosferatu", "camarilla"]
 }]
